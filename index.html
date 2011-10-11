@@ -1,0 +1,96 @@
+<!DOCTYPE html>  
+
+<!--
+	Copyright (c) 2011 Brian Cavalier
+	LICENSE: see the LICENSE.txt file. If file is missing, this file is subject
+	to the MIT License at: http://www.opensource.org/licenses/mit-license.php.
+
+	This is a basic HTML template for creating slide presentations using
+	the slide framework.  
+ -->
+
+<!-- Parts from HTML5 Boilerplate: http://html5boilerplate.com -->
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+	Remove this if you use the .htaccess -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>AMD &amp; CommonJS Modules - Pgh JS Meetup</title>
+	<meta name="description" content="HTML Slide Presentation framework">
+	<meta name="author" content="Brian Cavalier">
+
+	<!--  Mobile viewport optimized: adapted from Modernizr and
+	      http://stackoverflow.com/questions/2581957/iphone-safari-does-not-auto-scale-back-down-on-portrait-landscape-portrait
+	 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	
+	<!-- Ensure no FUOC in the slides -->
+	<style type="text/css">
+		.presentation-loading * {
+			visibility: hidden;
+		}
+	</style>
+	
+	<!-- <script src="js/modernizr-1.6.min.js" type="text/javascript" charset="utf-8"></script> -->
+
+	<!-- Configure RequireJS to load slides from the slides dir, and css from
+	     the css dir.  Note that these are relative to the location of require.js -->
+	<script type="text/javascript">
+		(function(global) {
+			global.curl = {
+				baseUrl: "js",
+				paths: {
+					"slides": "../slides",
+					"themes": "../css/themes",
+					"wire": "./wire"
+				},
+				pluginPath: 'curl/plugin'
+			};
+
+			global.wire = {
+				plugins: [{ module: 'wire/dom' }],
+				slideContainer: { $ref: 'dom!slide-container' },
+				slidePath: 'slides/slides.html'
+			};
+		})(window);
+	</script>
+	<script type="text/javascript" src="js/curl.js"></script>
+	<script type="text/javascript">
+		curl(['wire!slides-spec']);
+	</script>
+</head>
+
+<!-- Avoid any FUOC by adding presentation-loading, which the framework
+     will remove later once the first slide is ready -->
+<body class="presentation-loading">
+
+	<div>
+		<header>
+
+		</header>
+
+		<!-- The container to hold the slides -->
+		<div id="slide-container">
+
+		</div>
+
+		<!-- Extra notes -->
+		<footer>
+			<p class="slide-no-touch">Use <em>left/right arrows</em> to move between slides</p>
+			<p class="slide-touch"><em>Swipe left or right</em> to move between slides</p>
+			<p>Copyright &copy; 2011 Brian Cavalier</p>
+		</footer>
+	</div>
+	
+</body>
+</html>

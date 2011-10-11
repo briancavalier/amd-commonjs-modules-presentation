@@ -1,0 +1,950 @@
+<h1 id="modular_js">Modular JS</h1>
+
+<h2 id="amd_commonjs_modules">AMD &amp; CommonJS modules</h2>
+
+<hr>
+
+<h1 id="hi_i8217m_brian_and_i">Hi, I&#8217;m Brian, and I</h1>
+
+<ul>
+<li>love Javascript</li>
+<li>founded <a href="http://hovercraftstudios.com">Hovercraft Studios</a> so I could write more JS</li>
+<li>have some stuff on <a href="http://github.com/briancavalier">github</a></li>
+<li>made a <a href="http://briancavalier.com/digital-clock">clock</a>, one that <a href="http://briancavalier.com/digital-clock/explode.html">explodes</a>, and this <a href="http://briancavalier.com/digital-clock/analog">purely css analog version</a></li>
+<li><a href="http://blog.briancavalier.com">wrote some things</a> about JS and OOCSS</li>
+</ul>
+
+<hr>
+
+<h1 id="hi_i8217m_brian">Hi, I&#8217;m Brian</h1>
+
+<h2 id="my_internet_career_started_in_1993_when_i_helped_wvu_make_a_gopher_repository_for_some_documents">My internet career started in 1993, when I helped WVU make a Gopher repository for some documents.</h2>
+
+<p>I know what you&#8217;re thinking &#8230;</p>
+
+<hr>
+
+<h1 id="awesome">Awesome</h1>
+
+<h2 id="gopher_is_the_bees_knees">Gopher is the bees knees!</h2>
+
+<hr>
+
+<h1 id="no">No</h1>
+
+<hr>
+
+<h1 id="the_web">The web</h1>
+
+<h2 id="i_made_my_first_personal_web_page_in_1994_and_took_a_job_in_wexford_pa_as_the_8220computer_guy8221_for_a_non_profit">I made my first, personal web page in 1994, and took a job in Wexford, PA as the &#8220;computer guy&#8221; for a non-profit.</h2>
+
+<hr>
+
+<h1 id="the_web">The web</h1>
+
+<h2 id="shortly_after_that_in_1995_an_amazing_technology_came_along_that_changed_the_web_forever_it_allowed_changing_parts_of_a_page_without_reloading_the_whole_thing">Shortly after that, in 1995, an amazing technology came along that changed the web forever.  It allowed changing parts of a page without reloading the whole thing.</h2>
+
+<p>I know what you&#8217;re thinking &#8230;</p>
+
+<hr>
+
+<h1 id="frames">Frames</h1>
+
+<hr>
+
+<h1 id="no">No</h1>
+
+<h2 id="it_was_something_much_more_awesome_something_that_made_the_browser_programmable">It was something much more awesome, something that made the browser programmable.</h2>
+
+<p>Ok, ok, <em>now</em> I know what you&#8217;re thinking &#8230;</p>
+
+<hr>
+
+<h1 id="java_applets">Java Applets</h1>
+
+<hr>
+
+<h1 id="no">No</h1>
+
+<hr>
+
+<h1 id="javascript">Javascript</h1>
+
+<hr>
+
+<h1 id="javascript">Javascript</h1>
+
+<h2 id="and_it_was_awesome_because_we_could_do_awesome_stuff_like_this">and it was awesome because we could do awesome stuff like this:</h2>
+
+<pre><code>&lt;a href="javascript:
+    alert('All ur link r belong to us'); return false"&gt;
+</code></pre>
+
+<hr>
+
+<h1 id="evolution">Evolution</h1>
+
+<p>Later we realized that was bad, and we started to understand the true power of this new technology.  We started doing awesome stuff like this:</p>
+
+<pre><code>&lt;script&gt;
+    function globalFunctionValidateDate() {
+        // Awesome circa-1996 date validation
+        // codez here
+        document.forms[0].birthDate ...
+    }
+
+    // More global vars and functions here
+&lt;/script&gt;
+</code></pre>
+
+<hr>
+
+<h1 id="evolution">Evolution</h1>
+
+<p>Later we realized that was bad, and we started to understand the true power of this new technology.  We started doing awesome stuff like this:</p>
+
+<pre><code>&lt;script src="lotsOfGlobals1.js"&gt;
+&lt;script src="lotsOfGlobals2.js"&gt;
+&lt;script src="lotsOfGlobals3.js"&gt;
+</code></pre>
+
+<hr>
+
+<h1 id="profit">Profit!</h1>
+
+<h2 id="and_we_basked_in_our_global_name_collision_and_manual_dependency_management_glory">And we basked in our global name collision and manual dependency management glory</h2>
+
+<hr>
+
+<h1 id="ajax">Ajax</h1>
+
+<h2 id="fast_forward_to_1999_2000_and_along_came_ajax_or_ajax_aka_asychronous_javascript_and_xml_aka_8220everything_awesome_we_can_do_on_the_web8221">Fast-forward to 1999/2000, and along came AJAX, or Ajax, aka Asychronous Javascript And XML, aka &#8220;everything awesome we can do on the web&#8221;</h2>
+
+<hr>
+
+<h1 id="ajax">Ajax</h1>
+
+<h2 id="we_started_creating_larger_more_complex_apps_and_saw_the_need_for_better_organization_and_architecture">We started creating larger, more complex apps, and saw the need for better organization and architecture.</h2>
+
+<hr>
+
+<h1 id="evolution">Evolution</h1>
+
+<h2 id="unfortunately_better_meant">Unfortunately, <em>better</em> meant:</h2>
+
+<pre><code>&lt;script src="lotsOfGlobals1.js"&gt;
+&lt;script src="lotsOfGlobals2.js"&gt;
+&lt;script src="lotsOfGlobals3.js"&gt;
+&lt;script src="lotsOfGlobals4.js"&gt;
+&lt;script src="lotsOfGlobals5.js"&gt;
+&lt;script src="lotsOfGlobals6.js"&gt;
+&lt;script src="lotsOfGlobals7.js"&gt;
+&lt;script src="lotsOfGlobals8.js"&gt;
+&lt;script src="lotsOfGlobals9.js"&gt;
+...
+...
+&lt;script src="OMG-WhyDoesMyPageLoadTimeSuck.js"&gt;
+</code></pre>
+
+<hr>
+
+<h1 id="modules">Modules</h1>
+
+<h2 id="along_came_the_module_pattern_and_all_its_variants_to_help_us_namespace_our_code_encapsulate_data_and_expose_more_carefully_crafted_apis">Along came the Module Pattern and all its variants, to help us namespace our code, encapsulate data, and expose more carefully crafted APIs.</h2>
+
+<hr>
+
+<h1 id="finally">Finally!</h1>
+
+<pre><code>&lt;script src="Module1.js"&gt;
+&lt;script src="Module2.js"&gt;
+&lt;script src="Module3.js"&gt;
+&lt;script src="Module4.js"&gt;
+&lt;script src="Module5.js"&gt;
+&lt;script src="Module6.js"&gt;
+&lt;script src="Module7.js"&gt;
+&lt;script src="Module8.js"&gt;
+&lt;script src="Module9.js"&gt;
+...
+...
+&lt;script src="OMG-WhyDoesMyPageLoadTime-STILL-Suck.js"&gt;
+</code></pre>
+
+<hr>
+
+<h1 id="modules">Modules</h1>
+
+<h2 id="the_various_module_patterns_solved_some_key_problems_but">The various module patterns solved some key problems, but</h2>
+
+<ul>
+<li>They provide a pattern for dependency <em>declaration</em>, but don&#8217;t provide any real help with dependency <em>organization</em> or automatic dependency <em>loading</em></li>
+<ul>
+	<li>Some frameworks like Dojo and MooTools have their own proprietery module formats that solve the organization and loading problems</li>
+	<li><em>But</em> you have to buy into them wholesale to get the advantages</li>
+</ul>
+<li>Still had to choose between a built version with 1 &lt;script&gt; or non-built version with lots of &lt;script&gt;</li>
+</ul>
+
+<hr>
+
+<h1 id="script">&lt;script&gt;</h1>
+
+<h2 id="what8217s_the_problem">What&#8217;s the problem?</h2>
+
+<p>Synchronous loading? &#8230; who cares, <em>if</em> you&#8217;re doing a JS build (you are, aren&#8217;t you?)</p>
+
+<hr>
+
+<h1 id="script">&lt;script&gt;</h1>
+
+<h2 id="what8217s_the_problem">What&#8217;s the problem?</h2>
+
+<p>But, if you&#8217;re doing a build, do you have to build <em>every time you make even the smallest change to your code?</em></p>
+
+<blockquote>
+  <p>AMD. Because the web already has a build step: F5</p>
+</blockquote>
+
+<p><cite>&#8212; James Burke (<a href="http://twitter.com/#!/jrburke/status/119972357614993408" title="Twitter">@jburke</a>)</cite></p>
+
+<hr>
+
+<h1 id="html5">HTML5</h1>
+
+<h2 id="aka_8220everything_awesome_on_the_web8221">the <em>new</em> aka &#8220;everything awesome on the web&#8221;</h2>
+
+<p>We want to build even bigger, more interactive applications in the browser.</p>
+
+<hr>
+
+<h1 id="node">Node</h1>
+
+<h2 id="aka_8220everything_awesome_on_the_server8221">aka &#8220;everything awesome on the server&#8221;</h2>
+
+<p>Javascript is everywhere, and we want to share the same code in the browser and on the server.</p>
+
+<hr>
+
+<h1 id="current_project_stats">Current project stats</h1>
+
+<ul>
+<li>Approx <strong><em>207 Modules</em></strong>
+<ul>
+<li>Approx <strong><em>110 View modules</em></strong> each of which has its own: HTML template(s), CSS file, i18n Language file, Unit test file</li>
+</ul></li>
+<li>Only <strong><em>6 Pages</em></strong></li>
+<li>Not including 3rd party: Dojo, curl.js AMD loader, wire.js IOC container, cujo data binding</li>
+</ul>
+
+<hr>
+
+<h1 id="current_project_stats">Current project stats</h1>
+
+<h2 id="using_script_would_be_impossible">Using &lt;script&gt; would be impossible</h2>
+
+<ul>
+<li>Dependency management would be a nightmare
+<ul>
+<li>Could we even figure it out manually?!?</li>
+<li>One small dependency change could wreck the app</li>
+</ul></li>
+<li>With 1 &lt;script&gt;, doing a build would kill productivity</li>
+<li>With multiple &lt;script&gt;s, pageload time would be well beyond unacceptable</li>
+</ul>
+
+<hr>
+
+<h1 id="help">Help</h1>
+
+<h2 id="larger_more_complex_apps_require_more_carefully_crafted_rigorous_architecture_patterns_and_code_organization">Larger, more complex apps require more carefully crafted, rigorous architecture, patterns, and code organization.</h2>
+
+<hr>
+
+<h1 id="want">Want</h1>
+
+<h2 id="things_we_want_to_keep">Things we want to keep</h2>
+
+<ul>
+<li>Avoid global namespace problems in your own code and with 3rd party code</li>
+<li>Promote modular code from the ground up &#8230; i.e. make it easy enough to write modular code, so we don&#8217;t choose not to just based on friction</li>
+<li>Promotes thinking about the API your module will expose by making you return it or decorate module.exports with it</li>
+</ul>
+
+<hr>
+
+<h1 id="want">Want</h1>
+
+<h2 id="things_we8217d_like_to_have">Things we&#8217;d like to have</h2>
+
+<ul>
+<li>Encapsulation that is automatic and &#8220;free&#8221;.</li>
+<li><em>Automatic</em> dependency management</li>
+<li>Ability to run the exact same code built for production, and non-built for fast development (read: browser reload)</li>
+<li>Code that can be shared between servers and clients</li>
+</ul>
+
+<hr>
+
+<h1 id="amd_commonjs">AMD &amp; CommonJS</h1>
+
+<h2 id="real_modules_for_javascript">Real modules for Javascript</h2>
+
+<hr>
+
+<h1 id="three_main_parts">Three main parts</h1>
+
+<ul>
+<li>Module format</li>
+<li>Loader</li>
+<li>Build tools (aka optimizer)</li>
+</ul>
+
+<hr>
+
+<h1 id="module_format">Module format</h1>
+
+<ul>
+<li>AMD uses define()</li>
+<li>CommonJS&#8217;s &#8220;define&#8221; is implicit, file contents are the module</li>
+</ul>
+
+<hr>
+
+<h1 id="amd">AMD</h1>
+
+<h2 id="asynchronous"><em>A</em>synchronous</h2>
+
+<h2 id="module"><em>M</em>odule</h2>
+
+<h2 id="definition"><em>D</em>efinition</h2>
+
+<hr>
+
+<h1 id="amd">AMD</h1>
+
+<ul>
+<li>Designed with browser environment in mind</li>
+<li>Designed to <em>allow/promote</em> asynchronous loading</li>
+<li>Plugins for loading other resource types</li>
+<li>James Burke @jburke, Kris Zyp @kriszyp, John Hann @unscriptable</li>
+<li>Read the <a href="https://github.com/amdjs/amdjs-api/wiki">spec</a></li>
+</ul>
+
+<hr>
+
+<h1 id="who8217s_using_it">Who&#8217;s using it?</h1>
+
+<ul>
+<li>Dojo 1.7</li>
+<li>MooTools 2</li>
+<li>Firebug 1.8</li>
+<li>jQuery 1.7 &#8230; no, <a href="http://bugs.jquery.com/ticket/7102">really</a></li>
+</ul>
+
+<hr>
+
+<h1>define()</h1>
+
+<h2>define(moduleId, dependencies, definitionFunc);</h2>
+
+<hr>
+
+<h1>define()</h1>
+
+<h2>define(dependencies, definitionFunc);</h2>
+
+Using a moduleId can make it harder to relocate your module during refactoring.  <em>Use anonymous modules where possible.</em>
+
+<hr>
+
+<h1 id="module_format">Module format</h1>
+
+<pre><code>define(
+
+    ['pkgA/modA', 'pkgA/modB', 'pkgZ/modC'],
+
+    function (modA, modB, modC) {
+
+        var myModule = {
+			doStuff: function() { ... }
+		}
+
+        return myModule;
+    }
+);
+</code></pre>
+
+<hr>
+
+<pre><code><em>define(</em>
+
+    ['pkgA/modA', 'pkgA/modB', 'pkgZ/modC'],
+
+    function (modA, modB, modC) {
+
+        var myModule = {
+			doStuff: function() { ... }
+		}
+
+        return myModule;
+    }
+<em>);</em>
+</code></pre>
+
+<hr>
+
+<pre><code>define(
+
+    <em>// dependency list</em>
+    <em>['pkgA/modA', 'pkgA/modB', 'pkgZ/modC']</em>,
+
+    function (modA, modB, modC) {
+
+        var myModule = {
+			doStuff: function() { ... }
+		}
+
+        return myModule;
+    }
+);
+</code></pre>
+
+<hr>
+
+<pre><code>define(
+
+    ['pkgA/modA', 'pkgA/modB', 'pkgZ/modC'],
+
+    <em>// module definition function
+    // deps mapped to function params</em>
+    <em>function (modA, modB, modC) {
+
+        // create your module here
+        var myModule = {
+			doStuff: function() { ... }
+		}
+
+        return myModule;
+    }</em>
+);
+</code></pre>
+
+<hr>
+
+<pre><code>define(
+
+    ['pkgA/modA', 'pkgA/modB', 'pkgZ/modC'],
+
+    function (modA, modB, modC) {
+
+        var myModule = {
+			doStuff: function() { ... }
+		}
+
+        <em>// return your module</em>
+        <em>return myModule;</em>
+    }
+);
+</code></pre>
+
+<hr>
+
+<h1 id="using_it">Using it</h1>
+
+<pre><code>&lt;html class="loading"&gt;
+ &lt;head&gt;
+  &lt;script src="curl.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+   <em>curl(['MyApp/MyModule'],
+    function(MyModule) {
+    // Startup main module, which probably
+    // loads and starts up other modules
+	var m = new MyModule();
+    m.doStuff();
+    document.getElementsByTagName('html')
+      .className = '';
+   });</em>
+  &lt;/script&gt;
+...
+</code></pre>
+
+<hr>
+
+<h1 id="plugins">Plugins</h1>
+
+<h2 id="amd_plugins_can_load_other_types_of_resources_such_as_images_html_templates_css_localized_language_strings_files_etc">AMD plugins can load other types of resources, such as images, html templates, css, localized language/strings files, etc.</h2>
+
+<hr>
+
+<h1 id="plugins">Plugins</h1>
+
+<pre><code>define([
+    'renderer',
+    'text!modA-template.html',
+    'i18n!modA-strings',
+    'css!modA'
+    ],
+    function(renderer, template, strings) {
+        function ModAWidget(node) {
+            this.node = node;
+        }
+
+        ModAWidget.prototype = {
+            render: function() {
+                renderer.render(template, strings, this.node);
+            }
+        }
+
+        return ModAWidget;
+    }
+)
+</code></pre>
+
+<hr>
+
+<h1 id="plugins">Plugins</h1>
+
+<pre><code>define([
+    'renderer',
+    '<em>text!</em>modA-template.html',
+    '<em>i18n!</em>modA-strings',
+    '<em>css!</em>modA'
+    ],
+    function(renderer, <em>template</em>, <em>strings</em>) {
+        function ModAWidget(node) {
+            this.node = node;
+        }
+
+        ModAWidget.prototype = {
+            render: function() {
+                renderer.render(<em>template</em>, <em>strings</em>, this.node);
+            }
+        }
+
+        return ModAWidget;
+    }
+)
+</code></pre>
+
+<hr>
+
+<h1 id="plugins">Plugins</h1>
+
+<h2 id="can_do_even_more_powerful_things">Can do even more powerful things</h2>
+
+<ul>
+<li>wire! plugin - <a href="https://github.com/briancavalier/wire">wire.js</a> IOC container integration</li>
+<li>has! <a href="https://github.com/phiggins42/has.js/">has.js</a> feature detection and <em>conditional</em> module loading</li>
+<li>cs! plugin that loads and <em>compiles</em> Coffeescript</li>
+</ul>
+
+<hr>
+
+<h1 id="commonjs">CommonJS</h1>
+
+<ul>
+<li>A community driven set of proposed best practices, specs, and APIs, with a goal of compatibility across JS environments.</li>
+<li>One of those specs is the <a href="http://wiki.commonjs.org/wiki/Modules">CommonJS Module Spec</a></li>
+<li>Plenty more info at the <a href="http://wiki.commonjs.org/wiki/CommonJS">CommonJS wiki</a></li>
+</ul>
+
+<hr>
+
+<h1 id="module_format">Module format</h1>
+
+<ul>
+<li>No define()</li>
+<li>require, module, and exports &ldquo;free variables&rdquo;, i.e. they're implicit</li>
+</ul>
+
+<hr>
+
+<h1>Node !== CommonJS</h1>
+<ul>
+	<li>exports === this</li>
+	<li>exports === module.exports</li>
+	<li>extra module.exports property is not CommonJS</li>
+	<li>Using exports is more ES harmony-like</li>
+</ul>
+
+<hr>
+
+<h1 id="module_format">Module format</h1>
+
+<pre><code>var modA, modB, modC;
+
+modA = require('pkgA/modA');
+modB = require('pkgA/modB');
+modC = require('pkgZ/modC');
+
+function doStuff() { ... }
+
+exports.doStuff = doStuff;
+</code></pre>
+
+<hr>
+
+<pre><code><em>// No define()</em>
+
+var modA, modB, modC;
+
+modA = require('pkgA/modA');
+modB = require('pkgA/modB');
+modC = require('pkgZ/modC');
+
+function doStuff() { ... }
+
+exports.doStuff = doStuff;
+</code></pre>
+
+<hr>
+
+<pre><code>// No define()
+
+<em>// Load dependencies using require
+var modA, modB, modC;
+
+modA = require('pkgA/modA');
+modB = require('pkgA/modB');
+modC = require('pkgZ/modC');</em>
+
+function doStuff() { ... }
+
+exports.doStuff = doStuff;
+</code></pre>
+
+<hr>
+
+<pre><code>// No define()
+
+// Load dependencies using require
+var modA, modB, modC;
+
+modA = require('pkgA/modA');
+modB = require('pkgA/modB');
+modC = require('pkgZ/modC');
+
+function doStuff() { ... }
+
+<em>exports.doStuff = doStuff;</em>
+</code></pre>
+
+<hr>
+
+<pre><code>// Load dependencies using require
+var modA, modB, modC;
+
+modA = require('pkgA/modA');
+modB = require('pkgA/modB');
+modC = require('pkgZ/modC');
+
+function doStuff() { ... }
+
+<em>// OK in Node</em>
+<strong>// NOT OK in CommonJS (yet)</strong>
+<em>module.exports = doStuff;</em>
+</code></pre>
+
+<hr>
+
+<h1 id="examples">Examples</h1>
+
+<hr>
+
+<pre><code>define(
+/* 'MyLib/dateFormat', */ // AMD
+[<em>'MyLib/stringFormat'</em>],
+function (<em>stringFormat</em>) {
+	
+	<em>return</em> {
+		short: function(date) {
+			var y, m, d;
+			// ...
+			return stringFormat.format("%d/%d/%d",
+				y, m, d);
+		},
+		long: function(date) {
+			var y, m, d, h, mi, s;
+			// ...
+			return stringFormat.format("%d/%d/%d %d:%d:%d",
+				y, m, d, h, mi, s);
+		}
+	};
+});
+</code></pre>
+
+<hr>
+
+<h1>Using the module</h1>
+
+<pre><code>define(
+/* 'MyApp/DateView', */
+['<em>MyLib/dateFormat</em>'],
+function(<em>dateFormat</em>) {
+	function DateView(domNode) {
+		this.dateNode = domNode
+	}
+
+	DateView.prototype = {
+		setDate: function(date) {
+			this.date = date;
+		},
+		renderDate: function() {
+			this.dateNode.innerHTML = 
+				<em>dateFormat.short</em>(this.date);
+		}
+	};
+	
+	return DateView;
+});
+</code></pre>
+
+<hr>
+
+<pre><code>// CommonJS
+
+<em>var stringFormat = require('MyLib/stringFormat');</em>
+
+exports.short = function(date) {
+	var y, m, d;
+	// ...
+	return stringFormat.format("%d/%d/%d",
+		y, m, d);
+};
+
+exports.long = function(date) {
+	var y, m, d, h, mi, s;
+	// ...
+	return stringFormat.format("%d/%d/%d %d:%d:%d",
+		y, m, d, h, mi, s);
+};
+</code></pre>
+
+<hr>
+
+<pre><code>// CommonJS
+
+var stringFormat = require('MyLib/stringFormat');
+
+<em>exports.short</em> = function(date) {
+	var y, m, d;
+	// ...
+	return stringFormat.format("%d/%d/%d",
+		y, m, d);
+};
+
+<em>exports.long</em> = function(date) {
+	var y, m, d, h, mi, s;
+	// ...
+	return stringFormat.format("%d/%d/%d %d:%d:%d",
+		y, m, d, h, mi, s);
+};
+</code></pre>
+
+<hr>
+
+<h1>Using the module</h1>
+
+<pre><code>
+var dateFormat = <em>require('MyLib/dateFormat')</em>;
+
+var date = ...
+
+console.log(<em>dateFormat.short</em>(date));
+</code></pre>
+
+<hr>
+
+<h1>Using the module</h1>
+
+<pre><code>
+var shortDate = require('MyLib/dateFormat')<em>.short</em>;
+
+var date = ...
+
+console.log(<em>shortDate</em>(date));
+</code></pre>
+
+<hr>
+
+<h1 id="wtf">WTF</h1>
+
+<h2 id="i_know_what_you8217re_thinking">I know what you&#8217;re thinking</h2>
+
+<hr>
+
+<h1 id="which_one">Which one?!?</h1>
+
+<h2 id="why_are_there_2_module_formats_and_how_am_i_supposed_to_know_which_one_to_pick1">Why are there 2 (3 if you include the Node variant) module formats, and how am I supposed to know which one to pick?!?!!1</h2>
+
+<hr>
+
+<h1 id="differences">Differences</h1>
+
+<ul>
+<li>Scope</li>
+<li>Distance</li>
+</ul>
+
+<p><cite>John Hann &#8212; <a href="http://unscriptable.com/index.php/2011/09/30/amd-versus-cjs-whats-the-best-format/" title="AMD versus CJS. What&#8217;s the best format? | Unscriptable.com">AMD versus CJS. What&#8217;s the best format?</a></cite></p>
+
+<hr>
+
+<h1 id="scope">Scope</h1>
+
+<ul>
+<li>Browser environments allow direct access to global namespace from <em>anywhere</em>, and AMD can&#8217;t prevent that.</li>
+<li>CJS server environments don&#8217;t have browser baggage, so were designed to prevent global access.</li>
+</ul>
+
+<p><cite>John Hann &#8212; <a href="http://unscriptable.com/index.php/2011/09/30/amd-versus-cjs-whats-the-best-format/" title="AMD versus CJS. What&#8217;s the best format? | Unscriptable.com">AMD versus CJS. What&#8217;s the best format?</a></cite></p>
+
+<hr>
+
+<h1 id="distance">Distance</h1>
+
+<ul>
+<li>Browsers have to load resources from the network, which is unpredictable and unreliable.  Synchronous, blocking operations don&#8217;t make sense here.</li>
+<li>Servers can load from local disk in <em>effectively-zero</em> time, so synchronous is ok &#8230; but Node is an async badass, so ...</li>
+<li>Hey Node, why u no load modules async?!?
+<ul>
+<li>Probably: simpler programming model</li>
+</ul></li>
+<li>But still, grrrr</li>
+</ul>
+
+<hr>
+
+<h1 id="relax">Relax</h1>
+
+<h2 id="these_module_formats_are_a_good_thing">These module formats are a <em>good thing</em></h2>
+
+<blockquote>
+  <p>AMD(&rsquo;s) greatest benefit isn’t being able to load scripts on-demand, as some people may think, the greatest benefit is the increase of the code organization/modularity and also the reduced need for globals/namespacing.</p>
+</blockquote>
+
+<p><cite>Miller Medeiros &#8212; <a href="http://blog.millermedeiros.com/2011/09/amd-is-better-for-the-web-than-commonjs-modules/" title="AMD is better for the web than CommonJS modules |  Blog | Miller Medeiros">Amd Is Better for the Web Than Commonjs Modules</a></cite></p>
+
+<hr>
+
+<h1 id="relax">Relax</h1>
+
+<h2 id="amd_and_commonjs_are_a_clear_upgrade_path_to_esnext_harmony_modules">AMD and CommonJS are a clear upgrade path to <a href="http://wiki.ecmascript.org/doku.php?id=harmony:modules" title="harmony:modules [ES Wiki]">ES.Next Harmony modules</a>.</h2>
+
+<hr>
+
+<h1 id="which_one">Which one?</h1>
+
+<ul>
+<li>write modules that could execute in a server environment in CJS format</li>
+<li>write modules that could benefit from AMD’s browser-friendly features in AMD format</li>
+<ul>
+	<li>Consider AMD plugins as well, they can be a huge advantage</li>
+</ul>
+</ul>
+
+<p><cite>John Hann &#8212; <a href="http://unscriptable.com/index.php/2011/09/30/amd-versus-cjs-whats-the-best-format/" title="AMD versus CJS. What&#8217;s the best format? | Unscriptable.com">AMD versus CJS. What&#8217;s the best format?</a></cite></p>
+
+<hr>
+
+<h1 id="loader">Loader</h1>
+
+<h2 id="if_you_use_amd_or_commonjs_modules_you_need_a_loader">You need a Loader if you use AMD modules, or CommonJS modules in an environment that doesn't have an integrated loader</h2>
+
+<hr>
+
+<h1 id="amd_loaders">AMD Loaders</h1>
+
+<ul>
+<li><a href="http://requirejs.org/" title="RequireJS">RequireJS</a></li>
+<li><a href="https://github.com/unscriptable/curl" title="unscriptable/curl - GitHub">curl.js</a></li>
+<li><a href="http://bdframework.org/bdLoad/" title="bdLoad - the backdraft AMD loader - home">bdLoad</a></li>
+<li><a href="https://github.com/zazl/lsjs/">lsjs</a></li>
+<li>Node
+<ul>
+<li>RequireJS can be used to <a href="http://requirejs.org/docs/node.html" title="RequireJS in Node">load AMD in Node</a></li>
+</ul></li>
+</ul>
+
+<hr>
+
+<h1>AMD Integrated Loaders</h1>
+
+<li><a href="http://dojotoolkit.org/reference-guide/releasenotes/1.7.html" title="Dojo 1.7 Release Notes &mdash; The Dojo Toolkit - Reference Guide">dojo 1.7</a></li>
+<li><a href="https://github.com/mootools/mootools-core">MooTools 2</a> (see 2.0wip branch as of this writing)</li>
+<hr>
+
+<h1 id="commonjs_loaders">CommonJS Loaders</h1>
+
+<ul>
+<li><a href="http://requirejs.org/" title="RequireJS">RequireJS</a></li>
+<li><a href="https://github.com/unscriptable/curl" title="unscriptable/curl - GitHub">curl.js</a></li>
+<li><a href="https://github.com/pinf/loader-js">PINF</a></li>
+</ul>
+
+<hr>
+
+<h1 id="commonjs">CommonJS Integrated Loaders</h1>
+
+<ul>
+<li><a href="http://nodejs.org/" title="node.js">Node</a></li>
+<li><a href="https://github.com/tlrobinson/narwhal">Narwhal</a></li>
+<li><a href="http://code.google.com/p/persevere-framework/" title="persevere-framework - Persevere - REST JSON database, distributed computing, and persistent object mapping for JavaScript - Google Project Hosting">Persevere</a></li>
+<li><a href="http://ringojs.org/" title="Home - RingoJS">RingoJS</a></li>
+<li><a href="http://www.sproutcore.com/" title="SproutCore">SproutCore 1.1</a></li>
+</ul>
+
+<hr>
+
+<h1 id="jfdi">JFDI</h1>
+
+<ul>
+<li>Read a bit more</li>
+<li>Pick a module format
+<ul>
+<li>write modules that could execute in a server environment in CJS format</li>
+<li>write modules that could benefit from AMD’s browser-friendly features (and plugins) in AMD format</li>
+</ul></li>
+<li>Pick a loader</li>
+<li><em>Go</em></li>
+</ul>
+
+<hr>
+
+<h1 id="read_moar_nao">Read moar nao</h1>
+
+<ul>
+<li><a href="http://tagneto.blogspot.com/2011/04/on-inventing-js-module-formats-and.html" title="Tagneto: On inventing JS module formats and script loaders">Tagneto: On inventing JS module formats and script loaders</a></li>
+<li><a href="http://unscriptable.com/code/Using-AMD-loaders/" title="Using AMD loaders to write and manage modular javascript">Using AMD loaders to write and manage modular javascript</a></li>
+<li><a href="http://unscriptable.com/code/AMD-module-patterns">AMD Module Patterns</a></li>
+<li><a href="http://unscriptable.com/index.php/2011/09/30/amd-versus-cjs-whats-the-best-format/" title="AMD versus CJS. What&#8217;s the best format? | Unscriptable.com">AMD versus CJS. What&#8217;s the best format? | Unscriptable.com</a></li>
+<li><a href="http://blog.millermedeiros.com/2011/09/amd-is-better-for-the-web-than-commonjs-modules/" title="AMD is better for the web than CommonJS modules |  Blog | Miller Medeiros">AMD is better for the web than CommonJS modules |  Blog | Miller Medeiros</a></li>
+</ul>
+
+<hr>
+
+<h1 id="read_moar_nao">Read moar nao</h1>
+
+<ul>
+<li>AMD
+<ul>
+<li><a href="https://github.com/amdjs/amdjs-api/wiki">AMD Spec on github</a></li>
+<li><a href="http://groups.google.com/group/requirejs">RequireJS Google Group</a></li>
+<li><a href="https://groups.google.com/group/amd-implement">AMD Implementors Google Group</a></li>
+</ul></li>
+<li>CommonJS
+<ul>
+<li><a href="http://wiki.commonjs.org/wiki/CommonJS">CommonJS</a></li>
+<li><a href="http://wiki.commonjs.org/wiki/Modules">CommonJS Modules wiki</a></li>
+<li><a href="http://groups.google.com/group/commonjs">CommonJS Google Group</a></li>
+</ul></li>
+</ul>
+
+<hr>
+
+<div>
+	<h1 class="logo">HOVERCRAFT</h1>
+	<p>brian@hovercraftstudios.com</p>
+	<p><a href="http://twitter.com/briancavalier" title="Twitter">@briancavalier</a></p>
+	<p><a href="https://github.com/briancavalier">briancavalier@github</a></p>
+</div>
